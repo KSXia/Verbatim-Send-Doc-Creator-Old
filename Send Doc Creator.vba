@@ -1,4 +1,4 @@
-' Send Doc Creator v1.0.0---Universal---Analytic Deleter and Title Copier
+' Send Doc Creator v1.0.0---Analytic Deleter and Title Copier
 ' https://github.com/KSXia/Verbatim-Send-Doc-Creator/tree/Analytic-Deleter-and-Title-Copier
 ' Updated on 2024-08-14
 ' Thanks to Truf for providing the original macro this macro is based on!
