@@ -1,8 +1,8 @@
-' Send Doc Creator v1.0.0---Universal---Analytic Deleter
-' https://github.com/KSXia/Verbatim-Send-Doc-Creator
+' Send Doc Creator v1.0.0---Universal---Analytic Deleter and Title Copier
+' https://github.com/KSXia/Verbatim-Send-Doc-Creator/tree/Analytic-Deleter-and-Title-Copier
 ' Updated on 2024-08-14
 ' Thanks to Truf for providing the original macro this macro is based on!
-Sub CreateSendDoc()
+Sub CreateSendDocAndCopyTitle()
 	Dim StylesToDelete() As Variant
 	
 	' ---USER CUSTOMIZATION---
@@ -72,6 +72,18 @@ Sub CreateSendDoc()
 	' ---POST STYLE DELETION PROCESSES---
 	' Re-enable error prompts
 	On Error GoTo 0
+	
+	' ---SEND DOCUMENT TITLE COPIER---
+	Dim ClipboardText As DataObject
+	
+	' Set a variable to be the name of the send doc
+	Dim SendDocName As String
+	SendDocName = Left(OriginalDocName, Len(OriginalDocName) - 5) & " [S]"
+	
+	' Put the name of the send doc into the clipboard
+	Set ClipboardText = New DataObject
+	ClipboardText.SetText SendDocName
+	ClipboardText.PutInClipboard
 	
 	' ---FINAL PROCESSES---
 	' Re-enable screen updating and alerts
