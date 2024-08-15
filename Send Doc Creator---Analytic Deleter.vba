@@ -1,4 +1,4 @@
-' Send Doc Creator v1.0.0---Universal---Analytic Deleter
+' Send Doc Creator v1.0.0---Analytic Deleter
 ' https://github.com/KSXia/Verbatim-Send-Doc-Creator
 ' Updated on 2024-08-14
 ' Thanks to Truf for providing the original macro this macro is based on!
