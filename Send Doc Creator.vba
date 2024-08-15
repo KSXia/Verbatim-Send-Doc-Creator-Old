@@ -1,8 +1,9 @@
-' Send Doc Creator v1.0.0---Analytic Deleter
-' https://github.com/KSXia/Verbatim-Send-Doc-Creator
+' Send Doc Creator v1.0.0---Fully Automated Edition
+' https://github.com/KSXia/Verbatim-Send-Doc-Creator/tree/Fully-Automated-Edition
 ' Updated on 2024-08-14
 ' Thanks to Truf for providing the original macro this macro is based on!
-Sub CreateSendDoc()
+' This macro has limited compatibility: it may not work with documents saved in Dropbox on MacOS.
+Sub CreateAndSaveSendDoc()
 	Dim StylesToDelete() As Variant
 	
 	' ---USER CUSTOMIZATION---
@@ -72,6 +73,11 @@ Sub CreateSendDoc()
 	' ---POST STYLE DELETION PROCESSES---
 	' Re-enable error prompts
 	On Error GoTo 0
+	
+	' ---SAVING THE SEND DOC---
+	Dim SavePath As String
+	SavePath = OriginalDoc.Path & "\" & Left(OriginalDocName, Len(OriginalDocName) - 5) & " [S]" & ".docx"
+	SendDoc.SaveAs2 Filename:=SavePath, FileFormat:=wdFormatDocumentDefault
 	
 	' ---FINAL PROCESSES---
 	' Re-enable screen updating and alerts
