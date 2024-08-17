@@ -1,16 +1,22 @@
-' Send Doc Creator v1.0.0---Fully Automated Edition
+' Send Doc Creator v1.0.1---Fully Automated Edition
 ' https://github.com/KSXia/Verbatim-Send-Doc-Creator/tree/Fully-Automated-Edition
-' Updated on 2024-08-14
+' Updated on 2024-08-17
 ' Thanks to Truf for providing the original macro this macro is based on!
-' This macro has limited compatibility: it may not work with documents saved in Dropbox on MacOS.
+' This macro has limited compatibility: it may not work with documents saved on MacOS.
 Sub CreateAndSaveSendDoc()
 	Dim StylesToDelete() As Variant
+	
+	Dim AutomaticallyCloseSendDoc As Boolean
 	
 	' ---USER CUSTOMIZATION---
 	' <<SET THE STYLES TO DELETE HERE!>>
 	' Add the names of styles that you want to delete to this list in the StylesToDelete array. Make sure that the name of the style is in quotation marks and that each term is separated by commas.
 	' If the list is empty, the macro will still work, but no styles will be deleted.
 	StylesToDelete = Array("Analytic", "Undertag")
+	
+	' <<SET WHETHER TO AUTOMATICALLY CLOSE THE SEND DOC AFTER IT'S CREATED AND SAVED HERE!>>
+	' If AutomaticallyCloseSendDoc is set to True, the send doc will be automatically closed after it is created and saved.
+	AutomaticallyCloseSendDoc = True
 	
 	' ---INITIAL VARIABLE SETUP---
 	Dim OriginalDoc As Document
@@ -78,6 +84,11 @@ Sub CreateAndSaveSendDoc()
 	Dim SavePath As String
 	SavePath = OriginalDoc.Path & "\" & Left(OriginalDocName, Len(OriginalDocName) - 5) & " [S]" & ".docx"
 	SendDoc.SaveAs2 Filename:=SavePath, FileFormat:=wdFormatDocumentDefault
+	
+	If AutomaticallyCloseSendDoc Then
+		SendDoc.Close SaveChanges:=wdSaveChanges
+		MsgBox "The send doc is saved at " & SavePath, Title="Successfully Created and Saved Send Doc"
+	End If
 	
 	' ---FINAL PROCESSES---
 	' Re-enable screen updating and alerts
