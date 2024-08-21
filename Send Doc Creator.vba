@@ -1,6 +1,6 @@
 ' Send Doc Creator v1.0.1---Fully Automated Edition
 ' https://github.com/KSXia/Verbatim-Send-Doc-Creator/tree/Fully-Automated-Edition
-' Updated on 2024-08-17
+' Updated on 2024-08-17.
 ' Thanks to Truf for providing the original macro this macro is based on!
 ' This macro has limited compatibility: it may not work with documents saved on MacOS.
 Sub CreateAndSaveSendDoc()
