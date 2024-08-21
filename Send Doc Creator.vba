@@ -35,6 +35,12 @@ Sub CreateAndSaveSendDoc()
 	Dim OriginalDocName As String
 	OriginalDocName = OriginalDoc.Name
 	
+	' ---INITIAL GENERAL SETUP---
+	' Disable screen updating for faster execution
+	Application.ScreenUpdating = False
+	Application.DisplayAlerts = False
+	
+	' ---VARIABLE SETUP---
 	Dim SendDoc As Document
 	
 	' If the doc has been previously saved, create a copy of it to be the send doc
@@ -43,13 +49,9 @@ Sub CreateAndSaveSendDoc()
 	Dim GreatestStyleIndex As Integer
 	GreatestStyleIndex = UBound(StylesToDelete) - LBound(StylesToDelete)
 	
-	' ---INITIAL GENERAL SETUP---
+	' ---STYLE DELETION SETUP---
 	' Disable error prompts in case one of the styles set to be deleted isn't present
 	On Error Resume Next
-	
-	' Disable screen updating for faster execution
-	Application.ScreenUpdating = False
-	Application.DisplayAlerts = False
 	
 	' ---STYLE DELETION---
 	Dim CurrentStyleIndex As Integer
