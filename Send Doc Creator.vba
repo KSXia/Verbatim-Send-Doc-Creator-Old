@@ -1,4 +1,5 @@
-' Send Doc Creator v1.0.0---Analytic Deleter and Title Copier
+' Send Doc Creator v1.0.0
+' Title Copier Edition: This edition of the Send Doc Creator has the style deleting mechanism and a mechanism to copy the formatted name of the send doc into the clipboard, but it does not automatically save the send doc.
 ' https://github.com/KSXia/Verbatim-Send-Doc-Creator/tree/Analytic-Deleter-and-Title-Copier
 ' Updated on 2024-08-14.
 ' Thanks to Truf for providing the original macro this macro is based on!
