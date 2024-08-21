@@ -1,5 +1,5 @@
 ' Send Doc Creator v1.0.0
-' Basic Edition: This edition only has the style deleting mechanism and does not have any mechanisms regarding saving the send doc.
+' Basic Edition: This edition of the Send Doc Creator only has the style deleting mechanism and does not have any mechanisms regarding saving the send doc.
 ' https://github.com/KSXia/Verbatim-Send-Doc-Creator
 ' Updated on 2024-08-14.
 ' Thanks to Truf for providing the original macro this macro is based on!
