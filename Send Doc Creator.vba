@@ -1,4 +1,4 @@
-' ---Send Doc Creator v1.0.2---
+' ---Send Doc Creator v1.0.3---
 ' Updated on 2024-08-21.
 ' Basic Edition: This edition of the Send Doc Creator only has the style deleting mechanism and does not have any mechanisms regarding saving the send doc.
 ' https://github.com/KSXia/Verbatim-Send-Doc-Creator
@@ -48,7 +48,7 @@ Sub CreateSendDoc()
 	
 	' ---STYLE DELETION---
 	Dim CurrentStyleIndex As Integer
-	For CurrentStyleIndex = 0 to GreatestStyleIndex Step +1
+	For CurrentStyleIndex = 0 to GreatestStyleIndex Step 1
 		Dim StyleToDelete As Style
 		
 		' Specify the style to be deleted and delete it
