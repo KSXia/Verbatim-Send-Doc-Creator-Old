@@ -51,7 +51,7 @@ Sub CreateSendDocAndCopyTitle()
 	For CurrentStyleIndex = 0 to GreatestStyleIndex Step 1
 		Dim StyleToDelete As Style
 		
-		' Specify the style to be deleted and delete it
+		' Specify the style to be deleted
 		Set StyleToDelete = SendDoc.Styles(StylesToDelete(CurrentStyleIndex))
 		
 		' Use Find and Replace to remove text with the specified style and delete it
