@@ -4,6 +4,7 @@
 ' https://github.com/KSXia/Verbatim-Send-Doc-Creator/tree/Analytic-Deleter-and-Title-Copier
 ' Thanks to Truf for providing the original macro this macro is based on!
 Sub CreateSendDocAndCopyTitle()
+	Dim DeleteStyles As Boolean
 	Dim StylesToDelete() As Variant
 	
 	' ---USER CUSTOMIZATION---
@@ -11,6 +12,10 @@ Sub CreateSendDocAndCopyTitle()
 	' Add the names of styles that you want to delete to this list in the StylesToDelete array. Make sure that the name of the style is in quotation marks and that each term is separated by commas.
 	' If the list is empty, the macro will still work, but no styles will be deleted.
 	StylesToDelete = Array("Analytic", "Undertag")
+	
+	' If DeleteStyles is set to True, the styles listed in the StylesToDelete array will be deleted. If DeleteStyles is set to False, these styles will not be deleted.
+	' If you want to disable the deletion of these styles, set DeleteStyles to False.
+	DeleteStyles = True
 	
 	' ---INITIAL VARIABLE SETUP---
 	Dim OriginalDoc As Document
@@ -47,30 +52,32 @@ Sub CreateSendDocAndCopyTitle()
 	On Error Resume Next
 	
 	' ---STYLE DELETION---
-	Dim CurrentStyleIndex As Integer
-	For CurrentStyleIndex = 0 to GreatestStyleIndex Step 1
-		Dim StyleToDelete As Style
-		
-		' Specify the style to be deleted
-		Set StyleToDelete = SendDoc.Styles(StylesToDelete(CurrentStyleIndex))
-		
-		' Use Find and Replace to remove text with the specified style and delete it
-		With SendDoc.Content.Find
-			.ClearFormatting
-			.Style = StyleToDelete
-			.Replacement.ClearFormatting
-			.Replacement.Text = ""
-			.Format = True
-			' Disabling checks in the find process for optimization
-			.MatchCase = False
-			.MatchWholeWord = False
-			.MatchWildcards = False
-			.MatchSoundsLike = False
-			.MatchAllWordForms = False
-			' Delete all text with the style to delete
-			.Execute Replace:=wdReplaceAll, Forward:=True, Wrap:=wdFindContinue
-		End With
-	Next CurrentStyleIndex
+	If DeleteStyles = True Then
+		Dim CurrentStyleToDeleteIndex As Integer
+		For CurrentStyleToDeleteIndex = 0 to GreatestStyleIndex Step 1
+			Dim StyleToDelete As Style
+			
+			' Specify the style to be deleted
+			Set StyleToDelete = SendDoc.Styles(StylesToDelete(CurrentStyleToDeleteIndex))
+			
+			' Use Find and Replace to remove text with the specified style and delete it
+			With SendDoc.Content.Find
+				.ClearFormatting
+				.Style = StyleToDelete
+				.Replacement.ClearFormatting
+				.Replacement.Text = ""
+				.Format = True
+				' Disabling checks in the find process for optimization
+				.MatchCase = False
+				.MatchWholeWord = False
+				.MatchWildcards = False
+				.MatchSoundsLike = False
+				.MatchAllWordForms = False
+				' Delete all text with the style to delete
+				.Execute Replace:=wdReplaceAll, Forward:=True, Wrap:=wdFindContinue
+			End With
+		Next CurrentStyleToDeleteIndex
+	End If
 	
 	' ---POST STYLE DELETION PROCESSES---
 	' Re-enable error prompts
