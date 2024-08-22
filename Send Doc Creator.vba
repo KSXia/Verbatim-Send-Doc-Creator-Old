@@ -1,4 +1,4 @@
-' ---Send Doc Creator v1.1.0---
+' ---Send Doc Creator v1.1.1---
 ' Updated on 2024-08-22.
 ' Fully Automated Edition: This edition of the Send Doc Creator has the style deleting mechanism and automatically saves the send doc.
 ' https://github.com/KSXia/Verbatim-Send-Doc-Creator/tree/Fully-Automated-Edition
