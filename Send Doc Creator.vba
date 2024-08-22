@@ -1,4 +1,4 @@
-' ---Send Doc Creator v1.1.1---
+' ---Send Doc Creator v2.0.0---
 ' Updated on 2024-08-22.
 ' Basic Edition: This edition of the Send Doc Creator only has the style deleting mechanism and does not have any mechanisms regarding saving the send doc.
 ' https://github.com/KSXia/Verbatim-Send-Doc-Creator
