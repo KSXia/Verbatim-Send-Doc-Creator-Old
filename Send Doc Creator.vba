@@ -11,7 +11,7 @@ Sub CreateSendDocAndCopyTitle()
 	' <<SET THE STYLES TO DELETE HERE!>>
 	' Add the names of styles that you want to delete to this list in the StylesToDelete array. Make sure that the name of the style is in quotation marks and that each term is separated by commas.
 	' If the list is empty, the macro will still work, but no styles will be deleted.
-	StylesToDelete = Array("Analytic", "Undertag")
+	StylesToDelete = Array("Undertag", "Analytic")
 	
 	' If DeleteStyles is set to True, the styles listed in the StylesToDelete array will be deleted. If DeleteStyles is set to False, these styles will not be deleted.
 	' If you want to disable the deletion of these styles, set DeleteStyles to False.
