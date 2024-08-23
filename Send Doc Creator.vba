@@ -1,7 +1,7 @@
 ' ---Send Doc Creator v2.0.6---
 ' Updated on 2024-08-23.
 ' Fully Automated Edition: This edition of the Send Doc Creator has the style deleting mechanism and automatically saves the send doc.
-' WARNING: This edition of the Send Doc Creator has limited compatibility! It might not work on MacOS.
+' WARNING: This edition of the Send Doc Creator has LIMITED COMPATIBILITY! It might not work on MacOS.
 ' https://github.com/KSXia/Verbatim-Send-Doc-Creator-Old
 ' Thanks to Truf for creating and providing the original "Create Send Doc" macro this macro is based on! You can find Truf's macros on his website at https://debate-decoded.ghost.io/leveling-up-verbatim/
 Sub CreateAndSaveSendDoc()
