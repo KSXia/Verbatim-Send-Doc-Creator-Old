@@ -2,7 +2,7 @@
 ' Updated on 2024-08-23.
 ' Basic Edition: This edition of the Send Doc Creator only has the style deleting mechanism and does not have any mechanisms regarding saving the send doc.
 ' https://github.com/KSXia/Verbatim-Send-Doc-Creator-Old
-' Thanks to Truf for providing the original macro this macro is based on!
+' Thanks to Truf for creating and providing the original "Create Send Doc" macro this macro is based on! You can find Truf's macros on his website at https://debate-decoded.ghost.io/leveling-up-verbatim/
 Sub CreateSendDoc()
 	Dim DeleteStyles As Boolean
 	Dim StylesToDelete() As Variant
