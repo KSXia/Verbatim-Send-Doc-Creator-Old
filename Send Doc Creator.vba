@@ -11,8 +11,8 @@ Sub CreateSendDocAndCopyTitle()
 	
 	' ---USER CUSTOMIZATION---
 	' <<SET THE STYLES TO DELETE HERE!>>
-	' Add the names of styles that you want to delete to this list in the StylesToDelete array. Make sure that the name of the style is in quotation marks and that each term is separated by commas.
-	' If the list is empty, the macro will still work, but no styles will be deleted.
+	' Add the names of styles that you want to delete to the list in the StylesToDelete array. Make sure that the name of the style is in quotation marks and that each term is separated by commas!
+	' If the list is empty, this macro will still work, but no styles will be deleted.
 	StylesToDelete = Array("Undertag", "Analytic")
 	
 	' If DeleteStyles is set to True, the styles listed in the StylesToDelete array will be deleted. If DeleteStyles is set to False, the styles listed in the StylesToDelete array will not be deleted.
@@ -20,13 +20,13 @@ Sub CreateSendDocAndCopyTitle()
 	DeleteStyles = True
 	
 	' <<SET THE LINKED CHARACTER STYLES TO DELETE HERE!>>
-	' A linked style will either apply the style to the entire paragraph or a selection of words depending on what you have selected. If you have clicked on a paragraph and have selected no text or have selected the entire paragraph, it will apply the paragraph variant of the style. If you have selected a subset of the paragraph, it will apply the character variant of the style to your selection. The options in this section control whether this macro will delete the instances of character variants of linked styles and which linked styles the macro will operate on.
+	' A linked style will either apply the style to the entire paragraph or a selection of words depending on what you have selected. If you have clicked on a paragraph and have selected no text or have selected the entire paragraph, it will apply the paragraph variant of the style. If you have selected a subset of the paragraph, it will apply the character variant of the style to your selection. The options in this section control whether this macro will delete the instances of character variants of linked styles and which linked styles this macro will operate on.
 	
 	' If DeleteLinkedCharacterStyles is set to True, the character variants of the linked styles listed in the LinkedCharacterStylesToDelete array will be deleted. If DeleteLinkedCharacterStyles is set to False, they will not be deleted.
 	DeleteLinkedCharacterStyles = True
 	
-	' Add the names of linked styles that you want to delete the character variant of to this list in the LinkedCharacterStylesToDelete array. Make sure that the name of the style is in quotation marks and that each term is separated by commas!
-	' If the list is empty, the macro will still work, but no character variants of linked styles will be deleted.
+	' Add the names of linked styles that you want to delete the character variant of to the list in the LinkedCharacterStylesToDelete array. Make sure that the name of the style is in quotation marks and that each term is separated by commas!
+	' If the list is empty, this macro will still work, but no character variants of linked styles will be deleted.
 	LinkedCharacterStylesToDelete = Array("Analytic")
 	
 	' ---INITIAL VARIABLE SETUP---
