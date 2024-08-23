@@ -32,7 +32,7 @@ Sub CreateAndSaveSendDoc()
 	LinkedCharacterStylesToDelete = Array("Analytic")
 	
 	' <<SET WHETHER TO AUTOMATICALLY CLOSE THE SEND DOC AFTER IT'S CREATED AND SAVED HERE!>>
-	' If AutomaticallyCloseSendDoc is set to True, the send doc will be automatically closed after it is created and saved.
+	' If AutomaticallyCloseSendDoc is set to True, the send doc will automatically be closed after it is saved.
 	AutomaticallyCloseSendDoc = True
 	
 	' ---INITIAL VARIABLE SETUP---
