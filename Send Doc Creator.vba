@@ -9,7 +9,7 @@ Sub CreateAndSaveSendDoc()
 	Dim StylesToDelete() As Variant
 	Dim DeleteLinkedCharacterStyles As Boolean
 	Dim LinkedCharacterStylesToDelete() As Variant
-	Dim AutomaticallyCloseSendDoc As Boolean
+	Dim AutomaticallyCloseSavedSendDoc As Boolean
 	
 	' ---USER CUSTOMIZATION---
 	' <<SET THE STYLES TO DELETE HERE!>>
@@ -32,8 +32,8 @@ Sub CreateAndSaveSendDoc()
 	LinkedCharacterStylesToDelete = Array("Analytic")
 	
 	' <<SET WHETHER TO AUTOMATICALLY CLOSE THE SEND DOC AFTER IT'S CREATED AND SAVED HERE!>>
-	' If AutomaticallyCloseSendDoc is set to True, the send doc will automatically be closed after it is saved.
-	AutomaticallyCloseSendDoc = True
+	' If AutomaticallyCloseSavedSendDoc is set to True, the send doc will automatically be closed after it is saved.
+	AutomaticallyCloseSavedSendDoc = True
 	
 	' ---INITIAL VARIABLE SETUP---
 	Dim OriginalDoc As Document
@@ -172,7 +172,7 @@ Sub CreateAndSaveSendDoc()
 	SavePath = OriginalDoc.Path & "\" & Left(OriginalDocName, Len(OriginalDocName) - 5) & " [S]" & ".docx"
 	SendDoc.SaveAs2 Filename:=SavePath, FileFormat:=wdFormatDocumentDefault
 	
-	If AutomaticallyCloseSendDoc = True Then
+	If AutomaticallyCloseSavedSendDoc = True Then
 		SendDoc.Close SaveChanges:=wdSaveChanges
 		MsgBox "The send doc is saved at " & SavePath, Title="Successfully Created and Saved Send Doc"
 	End If
