@@ -1,4 +1,4 @@
-' ---Send Doc Creator v2.0.7---
+' ---Send Doc Creator v2.0.8---
 ' Updated on 2024-08-23.
 ' Title Copier Edition: This edition of the Send Doc Creator has the style deleting mechanism and a mechanism to copy the formatted name of the send doc into the clipboard, but it does not automatically save the send doc.
 ' https://github.com/KSXia/Verbatim-Send-Doc-Creator-Old
