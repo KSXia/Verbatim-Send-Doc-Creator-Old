@@ -31,7 +31,7 @@ Sub CreateAndSaveSendDoc()
 	' If the list is empty, this macro will still work, but no character variants of linked styles will be deleted.
 	LinkedCharacterStylesToDelete = Array("Analytic")
 	
-	' <<SET WHETHER TO AUTOMATICALLY CLOSE THE SEND DOC AFTER IT'S CREATED AND SAVED HERE!>>
+	' <<SET WHETHER TO AUTOMATICALLY CLOSE THE SEND DOC AFTER IT IS SAVED HERE!>>
 	' If AutomaticallyCloseSavedSendDoc is set to True, the send doc will automatically be closed after it is saved.
 	AutomaticallyCloseSavedSendDoc = True
 	
