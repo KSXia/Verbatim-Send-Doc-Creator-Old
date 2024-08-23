@@ -87,7 +87,7 @@ Sub CreateSendDocAndCopyTitle()
 				.Replacement.Text = "^p"
 				.Replacement.Style = "Tag Char"
 				.Format = True
-				' Ensuring various checks are disabled to have the search properly function
+				' Ensure various checks are disabled to have the search properly function
 				.MatchCase = False
 				.MatchWholeWord = False
 				.MatchWildcards = False
@@ -115,7 +115,7 @@ Sub CreateSendDocAndCopyTitle()
 				.Replacement.ClearFormatting
 				.Replacement.Text = ""
 				.Format = True
-				' Disabling checks in the find process for optimization
+				' Disable checks in the find process for optimization
 				.MatchCase = False
 				.MatchWholeWord = False
 				.MatchWildcards = False
@@ -142,7 +142,7 @@ Sub CreateSendDocAndCopyTitle()
 				.Replacement.ClearFormatting
 				.Replacement.Text = ""
 				.Format = True
-				' Disabling checks in the find process for optimization
+				' Disable checks in the find process for optimization
 				.MatchCase = False
 				.MatchWholeWord = False
 				.MatchWildcards = False
