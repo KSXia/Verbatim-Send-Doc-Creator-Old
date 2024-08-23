@@ -1,5 +1,8 @@
 # Verbatim Send Doc Creator
 
+## Newer Versions
+Newer versions of this macro (starting from v3.0.0) can be found in [this repository](https://github.com/KSXia/Verbatim-Send-Doc-Creator).
+
 ## Features
 * All editions will delete styles named `Analytic` and `Undertag` by default.
 * The styles to be deleted by the macro can be customized in the `User Customization` section of the macro code.
