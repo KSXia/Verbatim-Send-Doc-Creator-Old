@@ -1,4 +1,4 @@
-' ---Send Doc Creator v2.0.6---
+' ---Send Doc Creator v2.0.7---
 ' Updated on 2024-08-23.
 ' Fully Automated Edition: This edition of the Send Doc Creator has the style deleting mechanism and automatically saves the send doc.
 ' WARNING: This edition of the Send Doc Creator has limited compatibility! It might not work on MacOS.
