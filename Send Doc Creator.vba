@@ -8,6 +8,8 @@ Sub CreateSendDocAndCopyTitle()
 	Dim StylesToDelete() As Variant
 	Dim DeleteLinkedCharacterStyles As Boolean
 	Dim LinkedCharacterStylesToDelete() As Variant
+	Dim SendDocNamePrefix As String
+	Dim SendDocNameSuffix As String
 	
 	' ---USER CUSTOMIZATION---
 	' <<SET THE STYLES TO DELETE HERE!>>
@@ -28,6 +30,25 @@ Sub CreateSendDocAndCopyTitle()
 	' Add the names of linked styles that you want to delete the character variant of to the list in the LinkedCharacterStylesToDelete array. Make sure that the name of the style is in quotation marks and that each term is separated by commas!
 	' If the list is empty, this macro will still work, but no character variants of linked styles will be deleted.
 	LinkedCharacterStylesToDelete = Array("Analytic")
+	
+	' <<SET HOW THE SEND DOC IS NAMED HERE!>>
+	' Set SendDocNamePrefix to the prefix you want to add to the send doc name.
+	' Make sure there are quotation marks around the prefix you want to insert into the send doc name!
+	' If you do not want to insert a prefix into the send doc name, put nothing in-between the quotation marks. If you do this, you MUST have a suffix for the send doc name.
+	SendDocNamePrefix = ""
+	
+	' Set SendDocNameSuffix to the suffix you want to add to the send doc name.
+	' Make sure there are quotation marks around the suffix you want to insert into the send doc name!
+	' If you do not want to insert a suffix into the send doc name, put nothing in-between the quotation marks. If you do this, you MUST have a prefix for the send doc name.
+	SendDocNameSuffix = " [S]"
+	
+	' ---CHECK VALIDITY OF USER CONFIGURATION---
+	' Check if there is either a prefix or suffix for the send doc name
+	If SendDocNamePrefix = "" And SendDocNameSuffix = "" Then
+		' If there is neither a prefix nor suffix for the send doc name:
+		MsgBox "You have not set a suffix or prefix to add to the send doc name. Please set one in the macro settings and try again.", Title:="Error in Creating Send Doc"
+		Exit Sub
+	End If
 	
 	' ---INITIAL VARIABLE SETUP---
 	Dim OriginalDoc As Document
@@ -166,7 +187,7 @@ Sub CreateSendDocAndCopyTitle()
 	
 	' Set a variable to be the name of the send doc
 	Dim SendDocName As String
-	SendDocName = Left(OriginalDocName, Len(OriginalDocName) - 5) & " [S]"
+	SendDocName = SendDocNamePrefix & Left(OriginalDocName, Len(OriginalDocName) - 5) & SendDocNameSuffix
 	
 	' Put the name of the send doc into the clipboard
 	Set ClipboardText = New DataObject
