@@ -20,7 +20,7 @@ Sub CreateSendDocAndCopyTitle()
 	DeleteStyles = True
 	
 	' <<SET THE LINKED CHARACTER STYLES TO DELETE HERE!>>
-	' A linked style will either apply the style to the entire paragraph or a selection of words depending on what you have selected. If you have clicked on a paragraph and have selected no text or have selected the entire paragraph, it will apply the paragraph variant of the style. If you have selected a subset of the paragraph, it will apply the character variant of the style to your selection. The settings in this section control whether this macro will delete the instances of character variants of linked styles and which linked styles the macro will operate on.
+	' A linked style will either apply the style to the entire paragraph or a selection of words depending on what you have selected. If you have clicked on a paragraph and have selected no text or have selected the entire paragraph, it will apply the paragraph variant of the style. If you have selected a subset of the paragraph, it will apply the character variant of the style to your selection. The options in this section control whether this macro will delete the instances of character variants of linked styles and which linked styles the macro will operate on.
 	
 	' If DeleteLinkedCharacterStyles is set to True, the character variants of the linked styles listed in the LinkedCharacterStylesToDelete array will be deleted. If DeleteLinkedCharacterStyles is set to False, they will not be deleted.
 	DeleteLinkedCharacterStyles = True
