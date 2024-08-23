@@ -2,7 +2,7 @@
 ' Updated on 2024-08-23.
 ' Title Copier Edition: This edition of the Send Doc Creator has the style deleting mechanism and a mechanism to copy the formatted name of the send doc into the clipboard, but it does not automatically save the send doc.
 ' https://github.com/KSXia/Verbatim-Send-Doc-Creator-Old
-' Thanks to Truf for providing the original macro this macro is based on!
+' Thanks to Truf for creating and providing the original "Create Send Doc" macro this macro is based on! You can find Truf's macros on his website at https://debate-decoded.ghost.io/leveling-up-verbatim/
 Sub CreateSendDocAndCopyTitle()
 	Dim DeleteStyles As Boolean
 	Dim StylesToDelete() As Variant
