@@ -9,6 +9,8 @@ Sub CreateAndSaveSendDoc()
 	Dim StylesToDelete() As Variant
 	Dim DeleteLinkedCharacterStyles As Boolean
 	Dim LinkedCharacterStylesToDelete() As Variant
+	Dim SendDocNamePrefix As String
+	Dim SendDocNameSuffix As String
 	Dim AutomaticallyCloseSavedSendDoc As Boolean
 	
 	' ---USER CUSTOMIZATION---
@@ -31,9 +33,28 @@ Sub CreateAndSaveSendDoc()
 	' If the list is empty, this macro will still work, but no character variants of linked styles will be deleted.
 	LinkedCharacterStylesToDelete = Array("Analytic")
 	
+	' <<SET HOW THE SEND DOC IS NAMED HERE!>>
+	' Set SendDocNamePrefix to the prefix you want to add to the send doc name.
+	' Make sure there are quotation marks around the prefix you want to insert into the send doc name!
+	' If you do not want to insert a prefix into the send doc name, put nothing in-between the quotation marks. If you do this, you MUST have a suffix for the send doc name.
+	SendDocNamePrefix = ""
+	
+	' Set SendDocNameSuffix to the suffix you want to add to the send doc name.
+	' Make sure there are quotation marks around the suffix you want to insert into the send doc name!
+	' If you do not want to insert a suffix into the send doc name, put nothing in-between the quotation marks. If you do this, you MUST have a prefix for the send doc name.
+	SendDocNameSuffix = " [S]"
+	
 	' <<SET WHETHER TO AUTOMATICALLY CLOSE THE SEND DOC AFTER IT IS SAVED HERE!>>
 	' If AutomaticallyCloseSavedSendDoc is set to True, the send doc will automatically be closed after it is saved.
 	AutomaticallyCloseSavedSendDoc = True
+	
+	' ---CHECK VALIDITY OF USER CONFIGURATION---
+	' Check if there is either a prefix or suffix for the send doc name
+	If SendDocNamePrefix = "" And SendDocNameSuffix = "" Then
+		' If there is neither a prefix nor suffix for the send doc name:
+		MsgBox "You have not set a suffix or prefix to add to the send doc name. Please set one in the macro settings and try again.", Title:="Error in Creating Send Doc"
+		Exit Sub
+	End If
 	
 	' ---INITIAL VARIABLE SETUP---
 	Dim OriginalDoc As Document
@@ -169,7 +190,7 @@ Sub CreateAndSaveSendDoc()
 	
 	' ---SAVING THE SEND DOC---
 	Dim SavePath As String
-	SavePath = OriginalDoc.Path & "\" & Left(OriginalDocName, Len(OriginalDocName) - 5) & " [S]" & ".docx"
+	SavePath = OriginalDoc.Path & "\" & SendDocNamePrefix & Left(OriginalDocName, Len(OriginalDocName) - 5) & SendDocNameSuffix & ".docx"
 	SendDoc.SaveAs2 Filename:=SavePath, FileFormat:=wdFormatDocumentDefault
 	
 	If AutomaticallyCloseSavedSendDoc = True Then
