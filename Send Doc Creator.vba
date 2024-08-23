@@ -169,7 +169,7 @@ Sub CreateAndSaveSendDoc()
 	SavePath = OriginalDoc.Path & "\" & Left(OriginalDocName, Len(OriginalDocName) - 5) & " [S]" & ".docx"
 	SendDoc.SaveAs2 Filename:=SavePath, FileFormat:=wdFormatDocumentDefault
 	
-	If AutomaticallyCloseSendDoc Then
+	If AutomaticallyCloseSendDoc = True Then
 		SendDoc.Close SaveChanges:=wdSaveChanges
 		MsgBox "The send doc is saved at " & SavePath, Title="Successfully Created and Saved Send Doc"
 	End If
