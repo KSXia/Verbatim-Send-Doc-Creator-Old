@@ -1,9 +1,9 @@
 ' ---Send Doc Creator v2.0.6---
 ' Updated on 2024-08-23.
 ' Fully Automated Edition: This edition of the Send Doc Creator has the style deleting mechanism and automatically saves the send doc.
+' This macro has limited compatibility: It might not work with documents saved on MacOS.
 ' https://github.com/KSXia/Verbatim-Send-Doc-Creator-Old
 ' Thanks to Truf for creating and providing the original "Create Send Doc" macro this macro is based on! You can find Truf's macros on his website at https://debate-decoded.ghost.io/leveling-up-verbatim/
-' This macro has limited compatibility: It might not work with documents saved on MacOS.
 Sub CreateAndSaveSendDoc()
 	Dim DeleteStyles As Boolean
 	Dim StylesToDelete() As Variant
