@@ -133,7 +133,7 @@ Sub CreateSendDoc()
 			Dim LinkedCharacterStyleToDelete As Style
 			
 			' Specify the linked style to delete the character variants of
-			Set LinkedCharacterStyleToDelete = SendDoc.Styles(LinkedCharacterStylesToDelete(LinkedCharacterCurrentStyleToDeleteIndex))
+			Set LinkedCharacterStyleToDelete = SendDoc.Styles(LinkedCharacterStylesToDelete(CurrentLinkedCharacterStyleToDeleteIndex))
 			
 			' Use Find and Replace to remove text with the character variants of the specified linked style and delete it
 			With SendDoc.Content.Find
